@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = BeeShop.Lang.atribute_add_header;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="wrapper">
+        <!-- Navigation -->
+        @Html.Partial("~/Views/_vMenu.cshtml")
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@BeeShop.Lang.product_add_header</h1>                        
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <!-- /.row -->
+                    <div class="row">
+                        <!-- /.row -->
+                                    <div class="row">
+                                        <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            @BeeShop.Lang.product_add_header_notice
+                                            <button type="button" class="btn btn-primary" onclick="AddNew();">Save</button>
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a href="#home" data-toggle="tab">Home</a>
+                                                </li>
+                                                <li><a href="#profile" data-toggle="tab">Profile</a>
+                                                </li>
+                                                <li><a href="#messages" data-toggle="tab">Messages</a>
+                                                </li>
+                                                <li><a href="#settings" data-toggle="tab">Settings</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active" id="home">
+                                                    <h4>Home Tab</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </div>
+                                                <div class="tab-pane fade" id="profile">
+                                                    <h4>Profile Tab</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </div>
+                                                <div class="tab-pane fade" id="messages">
+                                                    <h4>Messages Tab</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </div>
+                                                <div class="tab-pane fade" id="settings">
+                                                    <h4>Settings Tab</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                    </div>
+                                    <!-- /.row -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<script>
+    function AddNew() {
+        var formdata = new FormData(); //FormData object
+        var name = document.getElementById("name").value;
+        var description = document.getElementById("description").value;
+        var parent = @ViewBag.parent;
+        if (name==""){
+            alert("@BeeShop.Lang.alert_input_name_field");
+            return;
+        }
+        formdata.append("name", name);
+        formdata.append("description", description);
+        formdata.append("parent", parent);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Atribute/Add_New');
+        xhr.send(formdata);
+        var content = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText == "1") {
+                    //alert("@BeeShop.Lang.alert_save_success");
+                    window.location.href = "/Atribute/Index";
+                } else {
+                    alert("@BeeShop.Lang.alert_save_not_success");
+                }
+            }
+            @*else {
+                alert("@BeeShop.Lang.alert_save_not_success");
+            }*@
+        }
+    }
+</script>

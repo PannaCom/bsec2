@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = "Atributes";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="wrapper">
+        <!-- Navigation -->
+        @Html.Partial("~/Views/_vMenu.cshtml")
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@BeeShop.Lang.atribute_index_header</h1>
+                        <a href="/Atribute/Add?parent=-1"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;<button type="button" class="btn btn-primary"> @BeeShop.Lang.atribute_add_header_add_root </button></a>
+                        <a href="#" onclick="addnew();"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;<button type="button" class="btn btn-primary"> @BeeShop.Lang.atribute_add_header_add_sub </button></a>
+                        <a href="#" onclick="edit();"><span class="fa fa-save"></span>&nbsp;<button type="button" class="btn btn-primary"> @BeeShop.Lang.atribute_add_header_edit </button></a>
+                        <a href="#" onclick="del();"><span class="glyphicon glyphicon-remove"></span>&nbsp;<button type="button" class="btn btn-primary"> @BeeShop.Lang.atribute_add_header_delete </button></a>
+                        <div id="atributelist"></div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<script>
+    var max_id = -1;
+    var current_parent = -1;
+    var current_depth = -1;
+    var current_order_no = 0;
+    var movefrom = -1;
+    var moveto = -1;
+    var isLoadingMove = 0;
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        //alert(ev.target.id);
+        ev.dataTransfer.setData("text", ev.target.id);
+        //alert(ev.target.id);
+        console.log("Cai chuyen di la" + ev.target.id);
+        movefrom = ev.target.id;
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        console.log("Cai chuyen den la " + ev.target.id);
+        moveto = ev.target.id;
+        moveCategoryAndSort(movefrom, moveto);
+    }
+
+    function setatt(id, order_no) {
+        //alert(max_id+"_"+id);
+        for (var j = 1; j <= max_id; j++) {
+            if (document.getElementById("dvattname" + j)) {
+                $("#dvattname" + j).css("background-color", "white");
+            }
+        }
+        $("#dvattname" + id).css("background-color", "yellow");
+        current_parent = id;
+        //current_depth = depth;
+        current_order_no = order_no;
+    }
+    function getRootAtributeList() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Atribute/getRootAtributeList');
+        xhr.send();
+        var content = "";
+        showLoading();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var news = '{"news":' + xhr.responseText + '}';
+                var json_parsed = $.parseJSON(news);            
+                $("#categorylist").html("");
+                for (var i = 0; i < json_parsed.news.length; i++) {
+                    if (json_parsed.news[i]) {
+                        var name = json_parsed.news[i].name;
+                        var id = json_parsed.news[i].id;  
+                        var order_no = json_parsed.news[i].order_no;
+                        $("#atributelist").append("<div style=\"width:95%;cursor:pointer;\" id=dvatt" + id + " ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" draggable=\"true\" ondragstart=\"drag(event)\"><img src=\"/Images/elbow-end-minus.gif\"><span id=dvattname" + id + " onclick=\"setatt(" + id + "," + order_no + ")\" >" + name + "</span></div>");
+                        //$("#atributelist").append("<div style=\"width:95%;cursor:pointer;\" id=dvattitem" + id + "></div>");
+                        if (max_id < id) max_id = id;
+                        getAllChildOfNode(id,1);
+                    }
+                }
+                //$("#categorylist").val(value);
+                //alert(news);
+                //hideLoading();
+            }
+        }
+    }
+    getRootAtributeList();
+    function getAllChildOfNode(parentid,DEPTH) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Atribute/getAllChildOfNode?id=' + parentid);
+        xhr.send();
+        var content = "";
+        showLoading();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var news = '{"news":' + xhr.responseText + '}';
+                var json_parsed = $.parseJSON(news);
+                //$("#categorylist").html("");
+                for (var i = 0; i < json_parsed.news.length; i++) {
+                    if (json_parsed.news[i]) {
+                        var name = json_parsed.news[i].name;
+                        var id = json_parsed.news[i].id;
+                        var depth = DEPTH;//json_parsed.news[i].depth;
+                        var order_no = json_parsed.news[i].order_no;
+                        var spacer = "<img src=\"/Images/elbow-line.gif\" width=16>";
+                        for (var j = 0; j <depth; j++) {
+                            spacer+="<img src=\"/Images/spacer.gif\" width=16>";
+                        }
+                        $("#dvatt" + parentid).append("<div style=\"width:95%;cursor:pointer;\"  id=dvatt" + id + " ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" draggable=\"true\" ondragstart=\"drag(event)\">" + spacer + "<img src=\"/Images/elbow-end.gif\"><span id=dvattname" + id + " onclick=\"setatt(" + id + "," + order_no + ")\">" + name + "<span></div>");
+                        //$("#dvcatitem" + parentid).append("<div style=\"width:95%;cursor:pointer;\" id=dvcatitem" + id + "></div>");
+                        if (max_id < id) max_id = id;
+                        getAllChildOfNode(id, DEPTH+1);
+                    }
+                }
+                hideLoading();
+                //$("#categorylist").val(value);
+                //alert(news);
+            }
+        }
+    }
+    function addnew() {
+        window.location.href = "/Atribute/Add?parent="+current_parent;
+    }
+    function edit() {
+        if (current_parent == -1) {
+            alert("@BeeShop.Lang.alert_edit_item");
+            return;
+        }
+        window.location.href = "/Atribute/Edit?id=" + current_parent;
+    }
+    function del() {
+        var r = confirm("Delete?");
+        if (r != true) {
+            return;
+        } 
+        var formdata = new FormData();
+        formdata.append("id", current_parent);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Atribute/Delete');
+        xhr.send(formdata);
+        var content = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText == "1") {
+                    //alert("@BeeShop.Lang.alert_save_success");
+                    window.location.href = "/Atribute/Index";
+                } else {
+                    alert("@BeeShop.Lang.alert_delete_not_success");
+                }
+            }          
+        }
+
+    }
+    function moveCategoryAndSort(movefrom, moveto) {
+        if (isLoadingMove == 1) return;
+        isLoadingMove = 1;
+        movefrom = parseInt(movefrom.replace("dvattname", "").replace("dvatt", ""));
+        moveto = parseInt(moveto.replace("dvattname", "").replace("dvatt", ""));
+        //alert(movefrom + "->" + moveto);
+        if (isNaN(movefrom) || isNaN(moveto)) return;
+        var r = confirm("Are your sure?");
+        if (r != true) {
+            window.location.href = "/Atribute/Index";
+            return;
+        }
+        showLoading();
+        var formdata = new FormData();
+        formdata.append("fromid", movefrom);
+        formdata.append("toid", moveto);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Atribute/moveCategoryAndSort');
+        xhr.send(formdata);
+        var content = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText == "1") {
+                    //alert("@BeeShop.Lang.alert_save_success");
+                    window.location.href = "/Atribute/Index";
+                } else {
+                    alert("@BeeShop.Lang.alert_move_not_success");
+                }
+                isLoadingMove = 0;
+                hideLoading();
+            }
+        }
+    }
+    
+</script>

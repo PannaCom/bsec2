@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="beeshopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="beeshopEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="atributes" EntityType="beeshopModel.atribute" />
+    <EntitySet Name="categories" EntityType="beeshopModel.category" />
+    <EntitySet Name="customer_group" EntityType="beeshopModel.customer_group" />
+    <EntitySet Name="manufactures" EntityType="beeshopModel.manufacture" />
+    <EntitySet Name="products" EntityType="beeshopModel.product" />
+    <EntitySet Name="products_atributes" EntityType="beeshopModel.products_atributes" />
+    <EntitySet Name="products_crosssell" EntityType="beeshopModel.products_crosssell" />
+    <EntitySet Name="products_data" EntityType="beeshopModel.products_data" />
+    <EntitySet Name="products_group_price" EntityType="beeshopModel.products_group_price" />
+    <EntitySet Name="products_image" EntityType="beeshopModel.products_image" />
+    <EntitySet Name="products_inventory" EntityType="beeshopModel.products_inventory" />
+    <EntitySet Name="products_price" EntityType="beeshopModel.products_price" />
+    <EntitySet Name="products_related" EntityType="beeshopModel.products_related" />
+    <EntitySet Name="products_review" EntityType="beeshopModel.products_review" />
+    <EntitySet Name="products_special_price" EntityType="beeshopModel.products_special_price" />
+    <EntitySet Name="products_upsell" EntityType="beeshopModel.products_upsell" />
+  </EntityContainer>
+  <EntityType Name="atribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="des" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="deleted" />
+    <Property Type="Int32" Name="order_no" />
+    <Property Type="Int32" Name="parent" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent" />
+    <Property Type="String" Name="image" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="urlkey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="inmenu" />
+    <Property Type="String" Name="description" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="isactive" />
+    <Property Type="String" Name="metakeyword" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="deleted" />
+    <Property Type="Int32" Name="order_no" />
+  </EntityType>
+  <EntityType Name="customer_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="manufacture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="product_type_id" />
+    <Property Type="Int32" Name="atributes_group_id" />
+    <Property Type="String" Name="name" MaxLength="152" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="short_des" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="des" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="sku" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="weight" />
+    <Property Type="Byte" Name="status" />
+    <Property Type="String" Name="url_key" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="manufacture" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="country_of_manufacture" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tags" MaxLength="522" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="as_new_from_date" Precision="3" />
+    <Property Type="DateTime" Name="as_new_to_date" Precision="3" />
+    <Property Type="Int32" Name="viewed" />
+    <Property Type="DateTime" Name="date_edit" Precision="3" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="products_atributes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="product_id" />
+    <Property Type="Int32" Name="atributes_id" />
+    <Property Type="String" Name="des" MaxLength="505" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="products_crosssell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="products_id" />
+    <Property Type="Int32" Name="products_id_crosssell" />
+  </EntityType>
+  <EntityType Name="products_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKU" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UPC" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EAN" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JAN" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISBN" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MPN" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Length" />
+    <Property Type="String" Name="LengthClass" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Weight" />
+    <Property Type="String" Name="WeightClass" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Height" />
+  </EntityType>
+  <EntityType Name="products_group_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="customer_group_id" Nullable="false" />
+    <Property Type="Double" Name="price" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="products_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="products_id" />
+    <Property Type="String" Name="image" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="products_inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="producst_id" />
+    <Property Type="Int32" Name="quantity" />
+    <Property Type="Int32" Name="min_qty_cart" />
+    <Property Type="Int32" Name="max_qty_cart" />
+  </EntityType>
+  <EntityType Name="products_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Double" Name="price" />
+    <Property Type="Int32" Name="group_price_id" />
+    <Property Type="Int32" Name="special_price_id" />
+    <Property Type="Double" Name="manufacture_price_retail" />
+    <Property Type="Byte" Name="tax_class" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="products_related">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="products_id" />
+    <Property Type="Int32" Name="products_id_related" />
+  </EntityType>
+  <EntityType Name="products_review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="product_id" />
+    <Property Type="Int32" Name="customer_id" />
+    <Property Type="String" Name="author" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="des" MaxLength="505" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="rating" />
+    <Property Type="Byte" Name="status" />
+    <Property Type="DateTime" Name="date_added" Precision="3" />
+  </EntityType>
+  <EntityType Name="products_special_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Double" Name="price" />
+    <Property Type="DateTime" Name="from_date" Precision="3" />
+    <Property Type="Int32" Name="from_date_id" />
+    <Property Type="DateTime" Name="to_date" Precision="3" />
+    <Property Type="Int32" Name="to_date_id" />
+    <Property Type="Byte" Name="deleted" />
+  </EntityType>
+  <EntityType Name="products_upsell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="products_id" />
+    <Property Type="Int32" Name="products_id_upsell" />
+  </EntityType>
+</Schema>

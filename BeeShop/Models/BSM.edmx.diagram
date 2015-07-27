@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e47ac8d394d0477cb318197b2045a696" Name="Diagram1">
+        <EntityTypeShape EntityType="beeshopModel.atribute" Width="1.5" PointX="10.701655648044151" PointY="22.622799287840166" />
+        <EntityTypeShape EntityType="beeshopModel.category" Width="1.5" PointX="10.140232515586648" PointY="4.5392121246732824" />
+        <EntityTypeShape EntityType="beeshopModel.customer_group" Width="1.5" PointX="6.5198782601020664" PointY="2.1653935323308193" />
+        <EntityTypeShape EntityType="beeshopModel.manufacture" Width="1.5" PointX="8.6421949698786236" PointY="1.7846195706094705" />
+        <EntityTypeShape EntityType="beeshopModel.product" Width="1.5" PointX="2.3481282099839897" PointY="31.830280721108561" />
+        <EntityTypeShape EntityType="beeshopModel.products_atributes" Width="1.5" PointX="5.1276070667093654" PointY="31.417444809999989" />
+        <EntityTypeShape EntityType="beeshopModel.products_crosssell" Width="1.5" PointX="1.1729982202746898" PointY="6.0719487546346844" />
+        <EntityTypeShape EntityType="beeshopModel.products_data" Width="1.5" PointX="9.7896972623605727" PointY="9.0960708451904679" />
+        <EntityTypeShape EntityType="beeshopModel.products_group_price" Width="1.5" PointX="6.7460416828962231" PointY="12.026470979687977" />
+        <EntityTypeShape EntityType="beeshopModel.products_image" Width="1.5" PointX="5.7617786367245847" PointY="18.910756820305604" />
+        <EntityTypeShape EntityType="beeshopModel.products_inventory" Width="1.5" PointX="11.150000027916393" PointY="13.393638274350035" />
+        <EntityTypeShape EntityType="beeshopModel.products_price" Width="1.5" PointX="7.9130360353333113" PointY="26.02873055358824" />
+        <EntityTypeShape EntityType="beeshopModel.products_related" Width="1.5" PointX="5.2039361191931812" PointY="7.7471623307779254" />
+        <EntityTypeShape EntityType="beeshopModel.products_review" Width="1.5" PointX="5.2689420083858733" PointY="12.232959529493451" />
+        <EntityTypeShape EntityType="beeshopModel.products_special_price" Width="1.5" PointX="8.958630936666685" PointY="6.7324918092845438" />
+        <EntityTypeShape EntityType="beeshopModel.products_upsell" Width="1.5" PointX="0.36410542594460094" PointY="5.6814489242068715" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

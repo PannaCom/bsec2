@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = BeeShop.Lang.atribute_add_header;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="wrapper">
+        <!-- Navigation -->
+        @Html.Partial("~/Views/_vMenu.cshtml")
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@BeeShop.Lang.atribute_add_header</h1>                        
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    @BeeShop.Lang.atribute_add_header_notice
+                                    <button type="button" class="btn btn-primary" onclick="AddNew();">Save</button>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_name</label>
+                                                    <input class="form-control"  id="name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_des</label>
+                                                    <textarea class="form-control"  id="description" maxlength="300"></textarea>
+                                                </div>                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<script>
+    function AddNew() {
+        var formdata = new FormData(); //FormData object
+        var name = document.getElementById("name").value;
+        var description = document.getElementById("description").value;
+        var parent = @ViewBag.parent;
+        if (name==""){
+            alert("@BeeShop.Lang.alert_input_name_field");
+            return;
+        }
+        formdata.append("name", name);
+        formdata.append("description", description);
+        formdata.append("parent", parent);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Atribute/Add_New');
+        xhr.send(formdata);
+        var content = "";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText == "1") {
+                    //alert("@BeeShop.Lang.alert_save_success");
+                    window.location.href = "/Atribute/Index";
+                } else {
+                    alert("@BeeShop.Lang.alert_save_not_success");
+                }
+            }
+            @*else {
+                alert("@BeeShop.Lang.alert_save_not_success");
+            }*@
+        }
+    }
+</script>

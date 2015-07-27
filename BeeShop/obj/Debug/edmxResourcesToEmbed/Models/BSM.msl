@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="beeshopModelStoreContainer" CdmEntityContainer="beeshopEntities">
+    <EntitySetMapping Name="atributes">
+      <EntityTypeMapping TypeName="beeshopModel.atribute">
+        <MappingFragment StoreEntitySet="atributes">
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="beeshopModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="metakeyword" ColumnName="metakeyword" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="inmenu" ColumnName="inmenu" />
+          <ScalarProperty Name="urlkey" ColumnName="urlkey" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_group">
+      <EntityTypeMapping TypeName="beeshopModel.customer_group">
+        <MappingFragment StoreEntitySet="customer_group">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manufactures">
+      <EntityTypeMapping TypeName="beeshopModel.manufacture">
+        <MappingFragment StoreEntitySet="manufacture">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="beeshopModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="date_edit" ColumnName="date_edit" />
+          <ScalarProperty Name="viewed" ColumnName="viewed" />
+          <ScalarProperty Name="as_new_to_date" ColumnName="as_new_to_date" />
+          <ScalarProperty Name="as_new_from_date" ColumnName="as_new_from_date" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="country_of_manufacture" ColumnName="country_of_manufacture" />
+          <ScalarProperty Name="manufacture" ColumnName="manufacture" />
+          <ScalarProperty Name="url_key" ColumnName="url_key" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="short_des" ColumnName="short_des" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="atributes_group_id" ColumnName="atributes_group_id" />
+          <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_atributes">
+      <EntityTypeMapping TypeName="beeshopModel.products_atributes">
+        <MappingFragment StoreEntitySet="products_atributes">
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="atributes_id" ColumnName="atributes_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_crosssell">
+      <EntityTypeMapping TypeName="beeshopModel.products_crosssell">
+        <MappingFragment StoreEntitySet="products_crosssell">
+          <ScalarProperty Name="products_id_crosssell" ColumnName="products_id_crosssell" />
+          <ScalarProperty Name="products_id" ColumnName="products_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_data">
+      <EntityTypeMapping TypeName="beeshopModel.products_data">
+        <MappingFragment StoreEntitySet="products_data">
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="WeightClass" ColumnName="WeightClass" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="LengthClass" ColumnName="LengthClass" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="MPN" ColumnName="MPN" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="JAN" ColumnName="JAN" />
+          <ScalarProperty Name="EAN" ColumnName="EAN" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_group_price">
+      <EntityTypeMapping TypeName="beeshopModel.products_group_price">
+        <MappingFragment StoreEntitySet="products_group_price">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="customer_group_id" ColumnName="customer_group_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_image">
+      <EntityTypeMapping TypeName="beeshopModel.products_image">
+        <MappingFragment StoreEntitySet="products_image">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="products_id" ColumnName="products_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_inventory">
+      <EntityTypeMapping TypeName="beeshopModel.products_inventory">
+        <MappingFragment StoreEntitySet="products_inventory">
+          <ScalarProperty Name="max_qty_cart" ColumnName="max_qty_cart" />
+          <ScalarProperty Name="min_qty_cart" ColumnName="min_qty_cart" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="producst_id" ColumnName="producst_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_price">
+      <EntityTypeMapping TypeName="beeshopModel.products_price">
+        <MappingFragment StoreEntitySet="products_price">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="tax_class" ColumnName="tax_class" />
+          <ScalarProperty Name="manufacture_price_retail" ColumnName="manufacture_price_retail" />
+          <ScalarProperty Name="special_price_id" ColumnName="special_price_id" />
+          <ScalarProperty Name="group_price_id" ColumnName="group_price_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_related">
+      <EntityTypeMapping TypeName="beeshopModel.products_related">
+        <MappingFragment StoreEntitySet="products_related">
+          <ScalarProperty Name="products_id_related" ColumnName="products_id_related" />
+          <ScalarProperty Name="products_id" ColumnName="products_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_review">
+      <EntityTypeMapping TypeName="beeshopModel.products_review">
+        <MappingFragment StoreEntitySet="products_review">
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_special_price">
+      <EntityTypeMapping TypeName="beeshopModel.products_special_price">
+        <MappingFragment StoreEntitySet="products_special_price">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="to_date_id" ColumnName="to_date_id" />
+          <ScalarProperty Name="to_date" ColumnName="to_date" />
+          <ScalarProperty Name="from_date_id" ColumnName="from_date_id" />
+          <ScalarProperty Name="from_date" ColumnName="from_date" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products_upsell">
+      <EntityTypeMapping TypeName="beeshopModel.products_upsell">
+        <MappingFragment StoreEntitySet="products_upsell">
+          <ScalarProperty Name="products_id_upsell" ColumnName="products_id_upsell" />
+          <ScalarProperty Name="products_id" ColumnName="products_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

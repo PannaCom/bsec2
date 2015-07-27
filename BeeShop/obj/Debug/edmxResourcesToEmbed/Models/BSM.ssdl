@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="beeshopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="beeshopModelStoreContainer">
+    <EntitySet Name="atributes" EntityType="beeshopModel.Store.atributes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="category" EntityType="beeshopModel.Store.category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="customer_group" EntityType="beeshopModel.Store.customer_group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="manufacture" EntityType="beeshopModel.Store.manufacture" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products" EntityType="beeshopModel.Store.products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_atributes" EntityType="beeshopModel.Store.products_atributes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_crosssell" EntityType="beeshopModel.Store.products_crosssell" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_data" EntityType="beeshopModel.Store.products_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_group_price" EntityType="beeshopModel.Store.products_group_price" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_image" EntityType="beeshopModel.Store.products_image" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_inventory" EntityType="beeshopModel.Store.products_inventory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_price" EntityType="beeshopModel.Store.products_price" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_related" EntityType="beeshopModel.Store.products_related" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_review" EntityType="beeshopModel.Store.products_review" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_special_price" EntityType="beeshopModel.Store.products_special_price" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products_upsell" EntityType="beeshopModel.Store.products_upsell" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="atributes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="des" Type="nvarchar" MaxLength="550" />
+    <Property Name="deleted" Type="tinyint" />
+    <Property Name="order_no" Type="int" />
+    <Property Name="parent" Type="int" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="parent" Type="int" />
+    <Property Name="image" Type="nvarchar" MaxLength="150" />
+    <Property Name="urlkey" Type="nvarchar" MaxLength="50" />
+    <Property Name="inmenu" Type="tinyint" />
+    <Property Name="description" Type="nvarchar" MaxLength="550" />
+    <Property Name="isactive" Type="tinyint" />
+    <Property Name="metakeyword" Type="nvarchar" MaxLength="250" />
+    <Property Name="deleted" Type="tinyint" />
+    <Property Name="order_no" Type="int" />
+  </EntityType>
+  <EntityType Name="customer_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="manufacture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="product_type_id" Type="int" />
+    <Property Name="atributes_group_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="152" />
+    <Property Name="short_des" Type="nvarchar" MaxLength="150" />
+    <Property Name="des" Type="ntext" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" />
+    <Property Name="weight" Type="float" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="url_key" Type="nvarchar" MaxLength="150" />
+    <Property Name="manufacture" Type="nvarchar" MaxLength="50" />
+    <Property Name="country_of_manufacture" Type="nvarchar" MaxLength="50" />
+    <Property Name="tags" Type="nvarchar" MaxLength="522" />
+    <Property Name="as_new_from_date" Type="datetime" />
+    <Property Name="as_new_to_date" Type="datetime" />
+    <Property Name="viewed" Type="int" />
+    <Property Name="date_edit" Type="datetime" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="products_atributes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="atributes_id" Type="int" />
+    <Property Name="des" Type="nvarchar" MaxLength="505" />
+  </EntityType>
+  <EntityType Name="products_crosssell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="products_id" Type="int" />
+    <Property Name="products_id_crosssell" Type="int" />
+  </EntityType>
+  <EntityType Name="products_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="150" />
+    <Property Name="UPC" Type="nvarchar" MaxLength="150" />
+    <Property Name="EAN" Type="nvarchar" MaxLength="150" />
+    <Property Name="JAN" Type="nvarchar" MaxLength="150" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="150" />
+    <Property Name="MPN" Type="nvarchar" MaxLength="150" />
+    <Property Name="Length" Type="float" />
+    <Property Name="LengthClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="WeightClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="Height" Type="float" />
+  </EntityType>
+  <EntityType Name="products_group_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customer_group_id" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="products_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="products_id" Type="int" />
+    <Property Name="image" Type="nvarchar" MaxLength="150" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="products_inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="producst_id" Type="int" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="min_qty_cart" Type="int" />
+    <Property Name="max_qty_cart" Type="int" />
+  </EntityType>
+  <EntityType Name="products_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="float" />
+    <Property Name="group_price_id" Type="int" />
+    <Property Name="special_price_id" Type="int" />
+    <Property Name="manufacture_price_retail" Type="float" />
+    <Property Name="tax_class" Type="tinyint" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="products_related">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="products_id" Type="int" />
+    <Property Name="products_id_related" Type="int" />
+  </EntityType>
+  <EntityType Name="products_review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="des" Type="nvarchar" MaxLength="505" />
+    <Property Name="rating" Type="tinyint" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="date_added" Type="datetime" />
+  </EntityType>
+  <EntityType Name="products_special_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="float" />
+    <Property Name="from_date" Type="datetime" />
+    <Property Name="from_date_id" Type="int" />
+    <Property Name="to_date" Type="datetime" />
+    <Property Name="to_date_id" Type="int" />
+    <Property Name="deleted" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="products_upsell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="products_id" Type="int" />
+    <Property Name="products_id_upsell" Type="int" />
+  </EntityType>
+</Schema>

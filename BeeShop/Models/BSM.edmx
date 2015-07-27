@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="beeshopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="beeshopModelStoreContainer">
+          <EntitySet Name="atributes" EntityType="beeshopModel.Store.atributes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="category" EntityType="beeshopModel.Store.category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="customer_group" EntityType="beeshopModel.Store.customer_group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="manufacture" EntityType="beeshopModel.Store.manufacture" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products" EntityType="beeshopModel.Store.products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_atributes" EntityType="beeshopModel.Store.products_atributes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_crosssell" EntityType="beeshopModel.Store.products_crosssell" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_data" EntityType="beeshopModel.Store.products_data" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_group_price" EntityType="beeshopModel.Store.products_group_price" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_image" EntityType="beeshopModel.Store.products_image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_inventory" EntityType="beeshopModel.Store.products_inventory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_price" EntityType="beeshopModel.Store.products_price" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_related" EntityType="beeshopModel.Store.products_related" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_review" EntityType="beeshopModel.Store.products_review" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_special_price" EntityType="beeshopModel.Store.products_special_price" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_upsell" EntityType="beeshopModel.Store.products_upsell" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="atributes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="des" Type="nvarchar" MaxLength="550" />
+          <Property Name="deleted" Type="tinyint" />
+          <Property Name="order_no" Type="int" />
+          <Property Name="parent" Type="int" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="parent" Type="int" />
+          <Property Name="image" Type="nvarchar" MaxLength="150" />
+          <Property Name="urlkey" Type="nvarchar" MaxLength="50" />
+          <Property Name="inmenu" Type="tinyint" />
+          <Property Name="description" Type="nvarchar" MaxLength="550" />
+          <Property Name="isactive" Type="tinyint" />
+          <Property Name="metakeyword" Type="nvarchar" MaxLength="250" />
+          <Property Name="deleted" Type="tinyint" />
+          <Property Name="order_no" Type="int" />
+        </EntityType>
+        <EntityType Name="customer_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="manufacture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_type_id" Type="int" />
+          <Property Name="atributes_group_id" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="152" />
+          <Property Name="short_des" Type="nvarchar" MaxLength="150" />
+          <Property Name="des" Type="ntext" />
+          <Property Name="sku" Type="nvarchar" MaxLength="50" />
+          <Property Name="weight" Type="float" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="url_key" Type="nvarchar" MaxLength="150" />
+          <Property Name="manufacture" Type="nvarchar" MaxLength="50" />
+          <Property Name="country_of_manufacture" Type="nvarchar" MaxLength="50" />
+          <Property Name="tags" Type="nvarchar" MaxLength="522" />
+          <Property Name="as_new_from_date" Type="datetime" />
+          <Property Name="as_new_to_date" Type="datetime" />
+          <Property Name="viewed" Type="int" />
+          <Property Name="date_edit" Type="datetime" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products_atributes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="atributes_id" Type="int" />
+          <Property Name="des" Type="nvarchar" MaxLength="505" />
+        </EntityType>
+        <EntityType Name="products_crosssell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="products_id" Type="int" />
+          <Property Name="products_id_crosssell" Type="int" />
+        </EntityType>
+        <EntityType Name="products_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SKU" Type="nvarchar" MaxLength="150" />
+          <Property Name="UPC" Type="nvarchar" MaxLength="150" />
+          <Property Name="EAN" Type="nvarchar" MaxLength="150" />
+          <Property Name="JAN" Type="nvarchar" MaxLength="150" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="150" />
+          <Property Name="MPN" Type="nvarchar" MaxLength="150" />
+          <Property Name="Length" Type="float" />
+          <Property Name="LengthClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Height" Type="float" />
+        </EntityType>
+        <EntityType Name="products_group_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customer_group_id" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="products_id" Type="int" />
+          <Property Name="image" Type="nvarchar" MaxLength="150" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products_inventory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="producst_id" Type="int" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="min_qty_cart" Type="int" />
+          <Property Name="max_qty_cart" Type="int" />
+        </EntityType>
+        <EntityType Name="products_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="float" />
+          <Property Name="group_price_id" Type="int" />
+          <Property Name="special_price_id" Type="int" />
+          <Property Name="manufacture_price_retail" Type="float" />
+          <Property Name="tax_class" Type="tinyint" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products_related">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="products_id" Type="int" />
+          <Property Name="products_id_related" Type="int" />
+        </EntityType>
+        <EntityType Name="products_review">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="author" Type="nvarchar" MaxLength="50" />
+          <Property Name="des" Type="nvarchar" MaxLength="505" />
+          <Property Name="rating" Type="tinyint" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="date_added" Type="datetime" />
+        </EntityType>
+        <EntityType Name="products_special_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="float" />
+          <Property Name="from_date" Type="datetime" />
+          <Property Name="from_date_id" Type="int" />
+          <Property Name="to_date" Type="datetime" />
+          <Property Name="to_date_id" Type="int" />
+          <Property Name="deleted" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="products_id" Type="int" />
+          <Property Name="products_id_upsell" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="beeshopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="beeshopEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="atributes" EntityType="beeshopModel.atribute" />
+          <EntitySet Name="categories" EntityType="beeshopModel.category" />
+          <EntitySet Name="customer_group" EntityType="beeshopModel.customer_group" />
+          <EntitySet Name="manufactures" EntityType="beeshopModel.manufacture" />
+          <EntitySet Name="products" EntityType="beeshopModel.product" />
+          <EntitySet Name="products_atributes" EntityType="beeshopModel.products_atributes" />
+          <EntitySet Name="products_crosssell" EntityType="beeshopModel.products_crosssell" />
+          <EntitySet Name="products_data" EntityType="beeshopModel.products_data" />
+          <EntitySet Name="products_group_price" EntityType="beeshopModel.products_group_price" />
+          <EntitySet Name="products_image" EntityType="beeshopModel.products_image" />
+          <EntitySet Name="products_inventory" EntityType="beeshopModel.products_inventory" />
+          <EntitySet Name="products_price" EntityType="beeshopModel.products_price" />
+          <EntitySet Name="products_related" EntityType="beeshopModel.products_related" />
+          <EntitySet Name="products_review" EntityType="beeshopModel.products_review" />
+          <EntitySet Name="products_special_price" EntityType="beeshopModel.products_special_price" />
+          <EntitySet Name="products_upsell" EntityType="beeshopModel.products_upsell" />
+        </EntityContainer>
+        <EntityType Name="atribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="des" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="deleted" />
+          <Property Type="Int32" Name="order_no" />
+          <Property Type="Int32" Name="parent" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="parent" />
+          <Property Type="String" Name="image" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="urlkey" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="inmenu" />
+          <Property Type="String" Name="description" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="isactive" />
+          <Property Type="String" Name="metakeyword" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="deleted" />
+          <Property Type="Int32" Name="order_no" />
+        </EntityType>
+        <EntityType Name="customer_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="manufacture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_type_id" />
+          <Property Type="Int32" Name="atributes_group_id" />
+          <Property Type="String" Name="name" MaxLength="152" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="short_des" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="des" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sku" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="weight" />
+          <Property Type="Byte" Name="status" />
+          <Property Type="String" Name="url_key" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="manufacture" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="country_of_manufacture" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="tags" MaxLength="522" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="as_new_from_date" Precision="3" />
+          <Property Type="DateTime" Name="as_new_to_date" Precision="3" />
+          <Property Type="Int32" Name="viewed" />
+          <Property Type="DateTime" Name="date_edit" Precision="3" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="products_atributes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_id" />
+          <Property Type="Int32" Name="atributes_id" />
+          <Property Type="String" Name="des" MaxLength="505" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="products_crosssell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="products_id" />
+          <Property Type="Int32" Name="products_id_crosssell" />
+        </EntityType>
+        <EntityType Name="products_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SKU" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UPC" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EAN" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JAN" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ISBN" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MPN" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Length" />
+          <Property Type="String" Name="LengthClass" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Weight" />
+          <Property Type="String" Name="WeightClass" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Height" />
+        </EntityType>
+        <EntityType Name="products_group_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="customer_group_id" Nullable="false" />
+          <Property Type="Double" Name="price" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="products_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="products_id" />
+          <Property Type="String" Name="image" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="products_inventory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="producst_id" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="Int32" Name="min_qty_cart" />
+          <Property Type="Int32" Name="max_qty_cart" />
+        </EntityType>
+        <EntityType Name="products_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Double" Name="price" />
+          <Property Type="Int32" Name="group_price_id" />
+          <Property Type="Int32" Name="special_price_id" />
+          <Property Type="Double" Name="manufacture_price_retail" />
+          <Property Type="Byte" Name="tax_class" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="products_related">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="products_id" />
+          <Property Type="Int32" Name="products_id_related" />
+        </EntityType>
+        <EntityType Name="products_review">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_id" />
+          <Property Type="Int32" Name="customer_id" />
+          <Property Type="String" Name="author" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="des" MaxLength="505" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="rating" />
+          <Property Type="Byte" Name="status" />
+          <Property Type="DateTime" Name="date_added" Precision="3" />
+        </EntityType>
+        <EntityType Name="products_special_price">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Double" Name="price" />
+          <Property Type="DateTime" Name="from_date" Precision="3" />
+          <Property Type="Int32" Name="from_date_id" />
+          <Property Type="DateTime" Name="to_date" Precision="3" />
+          <Property Type="Int32" Name="to_date_id" />
+          <Property Type="Byte" Name="deleted" />
+        </EntityType>
+        <EntityType Name="products_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="products_id" />
+          <Property Type="Int32" Name="products_id_upsell" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="beeshopModelStoreContainer" CdmEntityContainer="beeshopEntities">
+          <EntitySetMapping Name="atributes">
+            <EntityTypeMapping TypeName="beeshopModel.atribute">
+              <MappingFragment StoreEntitySet="atributes">
+                <ScalarProperty Name="parent" ColumnName="parent" />
+                <ScalarProperty Name="order_no" ColumnName="order_no" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="beeshopModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="order_no" ColumnName="order_no" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="metakeyword" ColumnName="metakeyword" />
+                <ScalarProperty Name="isactive" ColumnName="isactive" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="inmenu" ColumnName="inmenu" />
+                <ScalarProperty Name="urlkey" ColumnName="urlkey" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="parent" ColumnName="parent" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_group">
+            <EntityTypeMapping TypeName="beeshopModel.customer_group">
+              <MappingFragment StoreEntitySet="customer_group">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manufactures">
+            <EntityTypeMapping TypeName="beeshopModel.manufacture">
+              <MappingFragment StoreEntitySet="manufacture">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="beeshopModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="date_edit" ColumnName="date_edit" />
+                <ScalarProperty Name="viewed" ColumnName="viewed" />
+                <ScalarProperty Name="as_new_to_date" ColumnName="as_new_to_date" />
+                <ScalarProperty Name="as_new_from_date" ColumnName="as_new_from_date" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+                <ScalarProperty Name="country_of_manufacture" ColumnName="country_of_manufacture" />
+                <ScalarProperty Name="manufacture" ColumnName="manufacture" />
+                <ScalarProperty Name="url_key" ColumnName="url_key" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="short_des" ColumnName="short_des" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="atributes_group_id" ColumnName="atributes_group_id" />
+                <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_atributes">
+            <EntityTypeMapping TypeName="beeshopModel.products_atributes">
+              <MappingFragment StoreEntitySet="products_atributes">
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="atributes_id" ColumnName="atributes_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_crosssell">
+            <EntityTypeMapping TypeName="beeshopModel.products_crosssell">
+              <MappingFragment StoreEntitySet="products_crosssell">
+                <ScalarProperty Name="products_id_crosssell" ColumnName="products_id_crosssell" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_data">
+            <EntityTypeMapping TypeName="beeshopModel.products_data">
+              <MappingFragment StoreEntitySet="products_data">
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="WeightClass" ColumnName="WeightClass" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="LengthClass" ColumnName="LengthClass" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="MPN" ColumnName="MPN" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="JAN" ColumnName="JAN" />
+                <ScalarProperty Name="EAN" ColumnName="EAN" />
+                <ScalarProperty Name="UPC" ColumnName="UPC" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_group_price">
+            <EntityTypeMapping TypeName="beeshopModel.products_group_price">
+              <MappingFragment StoreEntitySet="products_group_price">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="customer_group_id" ColumnName="customer_group_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_image">
+            <EntityTypeMapping TypeName="beeshopModel.products_image">
+              <MappingFragment StoreEntitySet="products_image">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_inventory">
+            <EntityTypeMapping TypeName="beeshopModel.products_inventory">
+              <MappingFragment StoreEntitySet="products_inventory">
+                <ScalarProperty Name="max_qty_cart" ColumnName="max_qty_cart" />
+                <ScalarProperty Name="min_qty_cart" ColumnName="min_qty_cart" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="producst_id" ColumnName="producst_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_price">
+            <EntityTypeMapping TypeName="beeshopModel.products_price">
+              <MappingFragment StoreEntitySet="products_price">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="tax_class" ColumnName="tax_class" />
+                <ScalarProperty Name="manufacture_price_retail" ColumnName="manufacture_price_retail" />
+                <ScalarProperty Name="special_price_id" ColumnName="special_price_id" />
+                <ScalarProperty Name="group_price_id" ColumnName="group_price_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_related">
+            <EntityTypeMapping TypeName="beeshopModel.products_related">
+              <MappingFragment StoreEntitySet="products_related">
+                <ScalarProperty Name="products_id_related" ColumnName="products_id_related" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_review">
+            <EntityTypeMapping TypeName="beeshopModel.products_review">
+              <MappingFragment StoreEntitySet="products_review">
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_special_price">
+            <EntityTypeMapping TypeName="beeshopModel.products_special_price">
+              <MappingFragment StoreEntitySet="products_special_price">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="to_date_id" ColumnName="to_date_id" />
+                <ScalarProperty Name="to_date" ColumnName="to_date" />
+                <ScalarProperty Name="from_date_id" ColumnName="from_date_id" />
+                <ScalarProperty Name="from_date" ColumnName="from_date" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_upsell">
+            <EntityTypeMapping TypeName="beeshopModel.products_upsell">
+              <MappingFragment StoreEntitySet="products_upsell">
+                <ScalarProperty Name="products_id_upsell" ColumnName="products_id_upsell" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
