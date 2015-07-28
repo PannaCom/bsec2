@@ -26,5 +26,6 @@ namespace BeeShop.Models
         public Nullable<double> Weight { get; set; }
         public string WeightClass { get; set; }
         public Nullable<double> Height { get; set; }
+        public string LinkWeb { get; set; }
     }
 }

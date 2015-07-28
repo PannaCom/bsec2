@@ -43,7 +43,13 @@ namespace BeeShop
         public static string atribute_add_header_edit = "Edit";
         public static string atribute_add_header_delete = "Delete";
         public static string atribute_field_name = "Name *";
-        public static string atribute_field_des = "Description";        
+        public static string atribute_field_des = "Description";
+        public static string atribute_field_type = "Type";
+        public static string atribute_field_default_value = "Default Value";
+        public static string atribute_field_required = "Required";
+        public static string atribute_field_apply_to = "Apply To";
+        public static string atribute_field_comparable = "Comparable";
+        public static string atribute_field_validate = "Validate"; 
         public static string atribute_field_parent_atribute = "Belong Parent Atribute *";
         public static string atribute_field_order_no = "Order No";
         public static string atribute_root_name = "Root Atribute";

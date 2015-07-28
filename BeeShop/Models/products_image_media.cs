@@ -12,15 +12,18 @@ namespace BeeShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class products_price
+    public partial class products_image_media
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> products_id { get; set; }
-        public Nullable<decimal> price { get; set; }
-        public Nullable<int> group_price_id { get; set; }
-        public Nullable<int> special_price_id { get; set; }
-        public Nullable<double> manufacture_price_retail { get; set; }
-        public Nullable<byte> tax_class { get; set; }
+        public string value { get; set; }
+        public string label { get; set; }
+        public Nullable<byte> sort_order { get; set; }
+        public Nullable<byte> thumb_nail { get; set; }
+        public Nullable<byte> small_image { get; set; }
+        public Nullable<byte> base_image { get; set; }
+        public Nullable<byte> is_video { get; set; }
+        public Nullable<byte> is_youtube { get; set; }
         public Nullable<byte> deleted { get; set; }
     }
 }

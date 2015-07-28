@@ -12,16 +12,17 @@ namespace BeeShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class products_inventory
+    public partial class products_custom_option
     {
         public int id { get; set; }
-        public Nullable<int> producst_id { get; set; }
-        public Nullable<byte> back_orders { get; set; }
-        public Nullable<byte> manage_stock { get; set; }
-        public Nullable<int> quantity { get; set; }
-        public Nullable<int> min_qty_cart { get; set; }
-        public Nullable<int> max_qty_cart { get; set; }
-        public Nullable<byte> qty_min_out_off_stock { get; set; }
-        public Nullable<byte> stock_availability { get; set; }
+        public Nullable<int> products_id { get; set; }
+        public string type { get; set; }
+        public Nullable<byte> is_require { get; set; }
+        public string sku { get; set; }
+        public Nullable<int> max_characters { get; set; }
+        public string file_extension { get; set; }
+        public Nullable<int> image_size_x { get; set; }
+        public Nullable<int> image_size_y { get; set; }
+        public Nullable<int> sort_order { get; set; }
     }
 }

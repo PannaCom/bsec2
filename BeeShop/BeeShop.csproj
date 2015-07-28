@@ -199,6 +199,9 @@
     <Compile Include="Models\atribute.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\atributes_type.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BSM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +220,12 @@
     <Compile Include="Models\category.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\customer.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customer_address.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\customer_group.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
@@ -226,25 +235,64 @@
     <Compile Include="Models\product.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\products_atributes.cs">
+    <Compile Include="Models\products_atributes_datetime.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_atributes_decimal.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_atributes_int.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_atributes_text.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_category.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\products_crosssell.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\products_custom_option.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_custom_option_price.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_custom_option_title.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\products_data.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\products_group_price.cs">
-      <DependentUpon>BSM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\products_image.cs">
+    <Compile Include="Models\products_image_media.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\products_inventory.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\products_inventory_customer_group.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\products_price.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_price_group.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_price_special.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_price_tier.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_promotion_rule.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_promotion_rule_condition.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\products_promotion_rule_customer_group.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\products_related.cs">
@@ -253,10 +301,52 @@
     <Compile Include="Models\products_review.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\products_special_price.cs">
+    <Compile Include="Models\products_sales_rule_customer_group.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\products_upsell.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_invoice.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_invoice_item.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_order.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_order_address.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_order_item.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_products_option_item.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_rule.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_rule_condition.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales_rule_coupon.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tax.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tax_rate.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tax_rate_customer_group.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tax_rule.cs">
+      <DependentUpon>BSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\watermark.cs">
       <DependentUpon>BSM.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1154,6 +1244,8 @@
     <Content Include="Views\Atribute\Add.cshtml" />
     <Content Include="Views\Atribute\Edit.cshtml" />
     <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\_vTypeInput.cshtml" />
+    <Content Include="Views\_vProductTypeApply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,7 +23,7 @@ namespace BeeShop.Controllers
             //ViewBag.depth = depth;            
             return View();
         }
-        public string Add_New(string name, string description,int? parent)
+        public string Add_New(string name, string description,string type,string default_value,byte? required, string apply_to, byte? comparable, byte? validate, int? parent)
         {
             try
             {
@@ -36,6 +36,7 @@ namespace BeeShop.Controllers
                 else
                     max_order_no = max_order_no + 1;
                 atribute att = new atribute();
+                att.id = 0;
                 att.name = name;
                 att.des = description;
                 att.deleted = 0;
@@ -45,6 +46,18 @@ namespace BeeShop.Controllers
                 att.order_no = max_order_no;
                 db.atributes.Add(att);
                 db.SaveChanges();
+                int newid = att.id;
+                atributes_type attt = new atributes_type();
+                attt.atributes_id = newid;
+                attt.type = type;
+                attt.default_value = default_value;
+                attt.required = required;
+                attt.apply_to = apply_to;
+                attt.comparable = comparable;
+                attt.validate = validate;
+                db.atributes_type.Add(attt);
+                db.SaveChanges();
+                
             }
             catch (Exception ex)
             {
@@ -63,9 +76,18 @@ namespace BeeShop.Controllers
                 ViewBag.parent = att.parent;
                 ViewBag.order_no = att.order_no;
             }
+            var attt = db.atributes_type.Where(o => o.atributes_id == id).FirstOrDefault();
+            if (attt != null) {
+                ViewBag.type = attt.type;
+                ViewBag.default_value = attt.default_value;
+                ViewBag.required = attt.required;
+                ViewBag.apply_to = attt.apply_to;
+                ViewBag.comparable = attt.comparable;
+                ViewBag.validate = attt.validate;
+            }
             return View();
         }
-        public string Edit_Update(int id, string name, string description, int? parent, int order_no)
+        public string Edit_Update(int id, string name, string description, string type, string default_value, byte? required, string apply_to, byte? comparable, byte? validate, int? parent, int order_no)
         {
             try
             {
@@ -77,6 +99,15 @@ namespace BeeShop.Controllers
                 //cate.depth = depth;
                 att.order_no = order_no;
                 db.Entry(att).State = EntityState.Modified;
+                db.SaveChanges();
+                atributes_type attt = db.atributes_type.Where(o => o.atributes_id == id).FirstOrDefault();
+                attt.type = type;
+                attt.default_value = default_value;
+                attt.required = required;
+                attt.apply_to = apply_to;
+                attt.comparable = comparable;
+                attt.validate = validate;
+                db.Entry(attt).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception ex)

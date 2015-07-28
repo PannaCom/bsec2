@@ -15,7 +15,7 @@ namespace BeeShop.Models
     public partial class product
     {
         public int id { get; set; }
-        public Nullable<int> product_type_id { get; set; }
+        public string product_type { get; set; }
         public Nullable<int> atributes_group_id { get; set; }
         public string name { get; set; }
         public string short_des { get; set; }
@@ -24,6 +24,7 @@ namespace BeeShop.Models
         public Nullable<double> weight { get; set; }
         public Nullable<byte> status { get; set; }
         public string url_key { get; set; }
+        public Nullable<byte> visibility { get; set; }
         public string manufacture { get; set; }
         public string country_of_manufacture { get; set; }
         public string tags { get; set; }

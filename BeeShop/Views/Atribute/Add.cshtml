@@ -33,7 +33,41 @@
                                                 <div class="form-group">
                                                     <label>@BeeShop.Lang.atribute_field_des</label>
                                                     <textarea class="form-control"  id="description" maxlength="300"></textarea>
-                                                </div>                                                
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_type</label>
+                                                    @Html.Partial("~/Views/_vTypeInput.cshtml")
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_default_value</label>
+                                                    <input class="form-control"  id="default_value">
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_required</label>
+                                                    <select id="required" name="required" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_apply_to</label>
+                                                    @Html.Partial("~/Views/_vProductTypeApply.cshtml")
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_comparable</label>
+                                                    <select id="comparable" name="comparable" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_validate</label>
+                                                    <select id="validate" name="validate" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+                                                </div>                                              
                                             </form>
                                         </div>
                                     </div>
@@ -55,6 +89,12 @@
         var formdata = new FormData(); //FormData object
         var name = document.getElementById("name").value;
         var description = document.getElementById("description").value;
+        var type = document.getElementById("type").value;
+        var default_value = document.getElementById("default_value").value;
+        var required = document.getElementById("required").value;
+        var apply_to = document.getElementById("apply_to").value;
+        var comparable = document.getElementById("comparable").value;
+        var validate = document.getElementById("validate").value;
         var parent = @ViewBag.parent;
         if (name==""){
             alert("@BeeShop.Lang.alert_input_name_field");
@@ -62,6 +102,12 @@
         }
         formdata.append("name", name);
         formdata.append("description", description);
+        formdata.append("type", type);
+        formdata.append("default_value", default_value);
+        formdata.append("required", required);
+        formdata.append("apply_to", apply_to);
+        formdata.append("comparable", comparable);
+        formdata.append("validate", validate);
         formdata.append("parent", parent);
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/Atribute/Add_New');

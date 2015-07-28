@@ -76,6 +76,41 @@
                                                         <option value="32">32</option>                                                        
                                                     </select>
                                                 </div>
+                                                <!-- Cac thuoc tinh rieng -->
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_type</label>
+                                                    @Html.Partial("~/Views/_vTypeInput.cshtml")
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_default_value</label>
+                                                    <input class="form-control"  id="default_value">
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_required</label>
+                                                    <select id="required" name="required" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_apply_to</label>
+                                                    @Html.Partial("~/Views/_vProductTypeApply.cshtml")
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_comparable</label>
+                                                    <select id="comparable" name="comparable" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>@BeeShop.Lang.atribute_field_validate</label>
+                                                    <select id="validate" name="validate" class="form-control">
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>                                                      
+                                                    </select>
+                                                </div> 
                                             </form>
                                         </div>
                                     </div>
@@ -92,15 +127,26 @@
 
     </div>
     <!-- /#wrapper -->
-<script>
-    
+<script>    
     document.getElementById("order_no").value="@ViewBag.order_no";
+    document.getElementById("type").value="@ViewBag.type";
+    document.getElementById("default_value").value="@ViewBag.default_value";
+    document.getElementById("required").value="@ViewBag.required";
+    document.getElementById("apply_to").value="@ViewBag.apply_to";
+    document.getElementById("comparable").value="@ViewBag.comparable";
+    document.getElementById("validate").value="@ViewBag.validate";    
     //document.getElementById("parent").value="@ViewBag.parent";
     function Update() {
         var formdata = new FormData(); //FormData object
         var id=@ViewBag.id
         var name = document.getElementById("name").value;
-        var description = document.getElementById("description").value;        
+        var description = document.getElementById("description").value;    
+        var type = document.getElementById("type").value;
+        var default_value = document.getElementById("default_value").value;
+        var required = document.getElementById("required").value;
+        var apply_to = document.getElementById("apply_to").value;
+        var comparable = document.getElementById("comparable").value;
+        var validate = document.getElementById("validate").value;
         var parent = document.getElementById("parent").value;
         var order_no = document.getElementById("order_no").value;
         //var depth = $("#parent option:selected").attr("depth");
@@ -113,7 +159,13 @@
         //return;
         formdata.append("id", id);
         formdata.append("name", name);
-        formdata.append("description", description);        
+        formdata.append("description", description);    
+        formdata.append("type", type);
+        formdata.append("default_value", default_value);
+        formdata.append("required", required);
+        formdata.append("apply_to", apply_to);
+        formdata.append("comparable", comparable);
+        formdata.append("validate", validate);
         formdata.append("parent", parent);      
         formdata.append("order_no", order_no);
         var xhr = new XMLHttpRequest();

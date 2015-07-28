@@ -12,11 +12,11 @@ namespace BeeShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class products_atributes
+    public partial class products_custom_option_title
     {
         public int id { get; set; }
-        public Nullable<int> product_id { get; set; }
-        public Nullable<int> atributes_id { get; set; }
-        public string des { get; set; }
+        public Nullable<int> option_id { get; set; }
+        public Nullable<byte> store_id { get; set; }
+        public string title { get; set; }
     }
 }

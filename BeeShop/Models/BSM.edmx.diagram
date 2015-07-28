@@ -5,22 +5,52 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e47ac8d394d0477cb318197b2045a696" Name="Diagram1">
-        <EntityTypeShape EntityType="beeshopModel.atribute" Width="1.5" PointX="10.701655648044151" PointY="22.622799287840166" />
-        <EntityTypeShape EntityType="beeshopModel.category" Width="1.5" PointX="10.140232515586648" PointY="4.5392121246732824" />
-        <EntityTypeShape EntityType="beeshopModel.customer_group" Width="1.5" PointX="6.5198782601020664" PointY="2.1653935323308193" />
-        <EntityTypeShape EntityType="beeshopModel.manufacture" Width="1.5" PointX="8.6421949698786236" PointY="1.7846195706094705" />
-        <EntityTypeShape EntityType="beeshopModel.product" Width="1.5" PointX="2.3481282099839897" PointY="31.830280721108561" />
-        <EntityTypeShape EntityType="beeshopModel.products_atributes" Width="1.5" PointX="5.1276070667093654" PointY="31.417444809999989" />
-        <EntityTypeShape EntityType="beeshopModel.products_crosssell" Width="1.5" PointX="1.1729982202746898" PointY="6.0719487546346844" />
-        <EntityTypeShape EntityType="beeshopModel.products_data" Width="1.5" PointX="9.7896972623605727" PointY="9.0960708451904679" />
-        <EntityTypeShape EntityType="beeshopModel.products_group_price" Width="1.5" PointX="6.7460416828962231" PointY="12.026470979687977" />
-        <EntityTypeShape EntityType="beeshopModel.products_image" Width="1.5" PointX="5.7617786367245847" PointY="18.910756820305604" />
-        <EntityTypeShape EntityType="beeshopModel.products_inventory" Width="1.5" PointX="11.150000027916393" PointY="13.393638274350035" />
-        <EntityTypeShape EntityType="beeshopModel.products_price" Width="1.5" PointX="7.9130360353333113" PointY="26.02873055358824" />
-        <EntityTypeShape EntityType="beeshopModel.products_related" Width="1.5" PointX="5.2039361191931812" PointY="7.7471623307779254" />
-        <EntityTypeShape EntityType="beeshopModel.products_review" Width="1.5" PointX="5.2689420083858733" PointY="12.232959529493451" />
-        <EntityTypeShape EntityType="beeshopModel.products_special_price" Width="1.5" PointX="8.958630936666685" PointY="6.7324918092845438" />
-        <EntityTypeShape EntityType="beeshopModel.products_upsell" Width="1.5" PointX="0.36410542594460094" PointY="5.6814489242068715" />
+        <EntityTypeShape EntityType="beeshopModel.atribute" Width="1.5" PointX="6.4533808671186588" PointY="20.462367946497334" />
+        <EntityTypeShape EntityType="beeshopModel.atributes_type" Width="1.5" PointX="4.521657521148053" PointY="29.279779611751334" />
+        <EntityTypeShape EntityType="beeshopModel.category" Width="1.5" PointX="8.608616808712771" PointY="25.203440677934996" />
+        <EntityTypeShape EntityType="beeshopModel.customer" Width="1.5" PointX="11.704876854878327" PointY="3.5719950513783818" />
+        <EntityTypeShape EntityType="beeshopModel.customer_address" Width="1.5" PointX="6.4187754143116891" PointY="30.335972040116776" />
+        <EntityTypeShape EntityType="beeshopModel.customer_group" Width="1.5" PointX="0.60058101480853787" PointY="2.1532987217201378" />
+        <EntityTypeShape EntityType="beeshopModel.manufacture" Width="1.5" PointX="2.3202711950616308" PointY="5.9145330367211875" />
+        <EntityTypeShape EntityType="beeshopModel.product" Width="1.5" PointX="1.8876101383416029" PointY="30.99813027633267" />
+        <EntityTypeShape EntityType="beeshopModel.products_atributes_datetime" Width="1.5" PointX="1.3968198399044665" PointY="4.6148528031142675" />
+        <EntityTypeShape EntityType="beeshopModel.products_atributes_decimal" Width="1.5" PointX="8.6827279425611383" PointY="24.945279043608011" />
+        <EntityTypeShape EntityType="beeshopModel.products_atributes_int" Width="1.5" PointX="8.8794866375995269" PointY="7.1967441622152668" />
+        <EntityTypeShape EntityType="beeshopModel.products_atributes_text" Width="1.5" PointX="4.337807353743262" PointY="16.90901973140846" />
+        <EntityTypeShape EntityType="beeshopModel.products_category" Width="1.5" PointX="2.5047898192446629" PointY="7.6510215884312158" />
+        <EntityTypeShape EntityType="beeshopModel.products_crosssell" Width="1.5" PointX="1.7034124963467066" PointY="10.422214214886639" />
+        <EntityTypeShape EntityType="beeshopModel.products_custom_option" Width="1.5" PointX="9.8797638965210712" PointY="22.969723592963874" />
+        <EntityTypeShape EntityType="beeshopModel.products_custom_option_price" Width="1.5" PointX="2.0714839315374771" PointY="5.4192272598944733" />
+        <EntityTypeShape EntityType="beeshopModel.products_custom_option_title" Width="1.5" PointX="10.684705986960188" PointY="22.176928262308671" />
+        <EntityTypeShape EntityType="beeshopModel.products_data" Width="1.5" PointX="6.7026309960999662" PointY="15.37051928759111" />
+        <EntityTypeShape EntityType="beeshopModel.products_image_media" Width="1.5" PointX="9.8733261869630446" PointY="6.6549026103014608" />
+        <EntityTypeShape EntityType="beeshopModel.products_inventory" Width="1.5" PointX="4.28320893844739" PointY="0.75359940563961836" />
+        <EntityTypeShape EntityType="beeshopModel.products_inventory_customer_group" Width="1.5" PointX="4.5827198087157308" PointY="7.2996759597676233" />
+        <EntityTypeShape EntityType="beeshopModel.products_price" Width="1.5" PointX="10.850534341694106" PointY="31.041201903969608" />
+        <EntityTypeShape EntityType="beeshopModel.products_price_group" Width="1.5" PointX="7.6446198241992942" PointY="18.227053561353614" />
+        <EntityTypeShape EntityType="beeshopModel.products_price_special" Width="1.5" PointX="2.3771538074953265" PointY="25.348099705459596" />
+        <EntityTypeShape EntityType="beeshopModel.products_price_tier" Width="1.5" PointX="3.2745218087334758" PointY="5.4200068588461763" />
+        <EntityTypeShape EntityType="beeshopModel.products_promotion_rule" Width="1.5" PointX="11.314491709375051" PointY="27.492845250057449" />
+        <EntityTypeShape EntityType="beeshopModel.products_promotion_rule_condition" Width="1.5" PointX="10.088604585308863" PointY="11.254198645825591" />
+        <EntityTypeShape EntityType="beeshopModel.products_promotion_rule_customer_group" Width="1.5" PointX="6.848023963555705" PointY="10.012271483434491" />
+        <EntityTypeShape EntityType="beeshopModel.products_related" Width="1.5" PointX="3.3355806261932388" PointY="27.148733658319681" />
+        <EntityTypeShape EntityType="beeshopModel.products_review" Width="1.5" PointX="8.4751275351620876" PointY="15.305289901469504" />
+        <EntityTypeShape EntityType="beeshopModel.products_sales_rule_customer_group" Width="1.5" PointX="7.7478777578789177" PointY="20.790790731455569" />
+        <EntityTypeShape EntityType="beeshopModel.products_upsell" Width="1.5" PointX="3.4597342477458226" PointY="26.147010845200629" />
+        <EntityTypeShape EntityType="beeshopModel.sales_invoice" Width="1.5" PointX="9.3045055835063124" PointY="28.182322112928293" />
+        <EntityTypeShape EntityType="beeshopModel.sales_invoice_item" Width="1.5" PointX="2.1227810336848632" PointY="16.01046159118901" />
+        <EntityTypeShape EntityType="beeshopModel.sales_order" Width="1.5" PointX="7.5153188926704777" PointY="21.663107747986498" />
+        <EntityTypeShape EntityType="beeshopModel.sales_order_address" Width="1.5" PointX="1.750972666661708" PointY="29.069950296110452" />
+        <EntityTypeShape EntityType="beeshopModel.sales_order_item" Width="1.5" PointX="9.44736086272046" PointY="22.400341774523419" />
+        <EntityTypeShape EntityType="beeshopModel.sales_products_option_item" Width="1.5" PointX="4.7717598326372723" PointY="16.378955073831115" />
+        <EntityTypeShape EntityType="beeshopModel.sales_rule" Width="1.5" PointX="3.8482447191366203" PointY="12.52628437267909" />
+        <EntityTypeShape EntityType="beeshopModel.sales_rule_condition" Width="1.5" PointX="10.696262575078878" PointY="20.452385956632153" />
+        <EntityTypeShape EntityType="beeshopModel.sales_rule_coupon" Width="1.5" PointX="0.49197928816637926" PointY="11.194333618131621" />
+        <EntityTypeShape EntityType="beeshopModel.tax" Width="1.5" PointX="0.63380852184901415" PointY="20.926030198543348" />
+        <EntityTypeShape EntityType="beeshopModel.tax_rate" Width="1.5" PointX="9.2991546379864012" PointY="10.031111900709156" />
+        <EntityTypeShape EntityType="beeshopModel.tax_rate_customer_group" Width="1.5" PointX="3.9436056371515642" PointY="17.238350652734912" />
+        <EntityTypeShape EntityType="beeshopModel.tax_rule" Width="1.5" PointX="1.4683241348100473" PointY="7.8614111728320886" />
+        <EntityTypeShape EntityType="beeshopModel.watermark" Width="1.5" PointX="2.4283641066534276" PointY="31.180136173581769" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

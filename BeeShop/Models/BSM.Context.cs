@@ -26,20 +26,50 @@ namespace BeeShop.Models
         }
     
         public DbSet<atribute> atributes { get; set; }
+        public DbSet<atributes_type> atributes_type { get; set; }
         public DbSet<category> categories { get; set; }
+        public DbSet<customer> customers { get; set; }
+        public DbSet<customer_address> customer_address { get; set; }
         public DbSet<customer_group> customer_group { get; set; }
         public DbSet<manufacture> manufactures { get; set; }
         public DbSet<product> products { get; set; }
-        public DbSet<products_atributes> products_atributes { get; set; }
+        public DbSet<products_atributes_datetime> products_atributes_datetime { get; set; }
+        public DbSet<products_atributes_decimal> products_atributes_decimal { get; set; }
+        public DbSet<products_atributes_int> products_atributes_int { get; set; }
+        public DbSet<products_atributes_text> products_atributes_text { get; set; }
+        public DbSet<products_category> products_category { get; set; }
         public DbSet<products_crosssell> products_crosssell { get; set; }
+        public DbSet<products_custom_option> products_custom_option { get; set; }
+        public DbSet<products_custom_option_price> products_custom_option_price { get; set; }
+        public DbSet<products_custom_option_title> products_custom_option_title { get; set; }
         public DbSet<products_data> products_data { get; set; }
-        public DbSet<products_group_price> products_group_price { get; set; }
-        public DbSet<products_image> products_image { get; set; }
+        public DbSet<products_image_media> products_image_media { get; set; }
         public DbSet<products_inventory> products_inventory { get; set; }
+        public DbSet<products_inventory_customer_group> products_inventory_customer_group { get; set; }
         public DbSet<products_price> products_price { get; set; }
+        public DbSet<products_price_group> products_price_group { get; set; }
+        public DbSet<products_price_special> products_price_special { get; set; }
+        public DbSet<products_price_tier> products_price_tier { get; set; }
+        public DbSet<products_promotion_rule> products_promotion_rule { get; set; }
+        public DbSet<products_promotion_rule_condition> products_promotion_rule_condition { get; set; }
+        public DbSet<products_promotion_rule_customer_group> products_promotion_rule_customer_group { get; set; }
         public DbSet<products_related> products_related { get; set; }
         public DbSet<products_review> products_review { get; set; }
-        public DbSet<products_special_price> products_special_price { get; set; }
+        public DbSet<products_sales_rule_customer_group> products_sales_rule_customer_group { get; set; }
         public DbSet<products_upsell> products_upsell { get; set; }
+        public DbSet<sales_invoice> sales_invoice { get; set; }
+        public DbSet<sales_invoice_item> sales_invoice_item { get; set; }
+        public DbSet<sales_order> sales_order { get; set; }
+        public DbSet<sales_order_address> sales_order_address { get; set; }
+        public DbSet<sales_order_item> sales_order_item { get; set; }
+        public DbSet<sales_products_option_item> sales_products_option_item { get; set; }
+        public DbSet<sales_rule> sales_rule { get; set; }
+        public DbSet<sales_rule_condition> sales_rule_condition { get; set; }
+        public DbSet<sales_rule_coupon> sales_rule_coupon { get; set; }
+        public DbSet<tax> taxes { get; set; }
+        public DbSet<tax_rate> tax_rate { get; set; }
+        public DbSet<tax_rate_customer_group> tax_rate_customer_group { get; set; }
+        public DbSet<tax_rule> tax_rule { get; set; }
+        public DbSet<watermark> watermarks { get; set; }
     }
 }
