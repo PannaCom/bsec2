@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_custom_option_title
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> option_id { get; set; }
         public Nullable<byte> store_id { get; set; }
         public string title { get; set; }

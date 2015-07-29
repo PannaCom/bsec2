@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_data
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string SKU { get; set; }
         public string UPC { get; set; }
         public string EAN { get; set; }

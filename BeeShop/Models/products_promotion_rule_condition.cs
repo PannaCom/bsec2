@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_promotion_rule_condition
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> rule_id { get; set; }
         public Nullable<int> products_id { get; set; }
         public string field_name { get; set; }

@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_review
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> product_id { get; set; }
         public Nullable<int> customer_id { get; set; }
         public string author { get; set; }

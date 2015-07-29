@@ -60,6 +60,16 @@ namespace BeeShop
         public static string product_tab1 = "General";
         public static string product_tab2 = "Prices";
         public static string product_tab3 = "Image";
+        public static string product_tab4 = "Inventory";
+        public static string product_tab5 = "Data";
+        public static string product_tab6 = "Categories";
+        public static string product_tab7 = "Related Products";
+        public static string product_tab8 = "Up-Sells";
+        public static string product_tab9 = "Cross-Sells";
+        public static string product_tab10 = "Custom Options";
+        public static string product_field_type = "Product Type";
+        public static string product_field_name = "Name";
+        public static string product_field_atribute_group = "Atribute Group";
 
         //Alert
         public static string alert_save_success = "Saved";

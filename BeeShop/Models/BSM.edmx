@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="first_name" Type="nvarchar" MaxLength="150" />
           <Property Name="middle_name" Type="nvarchar" MaxLength="150" />
           <Property Name="last_name" Type="nvarchar" MaxLength="150" />
@@ -112,7 +112,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="customer_id" Type="int" />
           <Property Name="company" Type="nvarchar" MaxLength="50" />
           <Property Name="street_address" Type="nvarchar" MaxLength="250" />
@@ -166,7 +166,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="int" />
           <Property Name="atributes_id" Type="int" />
           <Property Name="value" Type="datetime" />
@@ -175,7 +175,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="int" />
           <Property Name="atributes_id" Type="int" />
           <Property Name="value" Type="decimal" Precision="12" Scale="4" />
@@ -184,7 +184,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="int" />
           <Property Name="atributes_id" Type="int" />
           <Property Name="value" Type="int" />
@@ -193,7 +193,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="int" />
           <Property Name="atributes_id" Type="int" />
           <Property Name="value" Type="nvarchar" MaxLength="505" />
@@ -202,7 +202,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="category_id" Type="int" />
         </EntityType>
@@ -210,7 +210,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="products_id_crosssell" Type="int" />
         </EntityType>
@@ -218,7 +218,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="type" Type="nvarchar" MaxLength="50" />
           <Property Name="is_require" Type="tinyint" />
@@ -233,7 +233,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="option_id" Type="int" />
           <Property Name="store_id" Type="tinyint" />
           <Property Name="price" Type="decimal" Precision="12" Scale="4" />
@@ -243,7 +243,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="option_id" Type="int" />
           <Property Name="store_id" Type="tinyint" />
           <Property Name="title" Type="nvarchar" MaxLength="150" />
@@ -252,7 +252,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="SKU" Type="nvarchar" MaxLength="150" />
           <Property Name="UPC" Type="nvarchar" MaxLength="150" />
           <Property Name="EAN" Type="nvarchar" MaxLength="150" />
@@ -286,7 +286,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="producst_id" Type="int" />
           <Property Name="back_orders" Type="tinyint" />
           <Property Name="manage_stock" Type="tinyint" />
@@ -300,7 +300,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="customer_group_id" Type="int" />
           <Property Name="min_qty_cart" Type="int" />
@@ -309,7 +309,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="price" Type="decimal" Precision="12" Scale="4" />
           <Property Name="group_price_id" Type="int" />
@@ -322,7 +322,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="customer_group_id" Type="int" Nullable="false" />
           <Property Name="price" Type="decimal" Precision="12" Scale="4" />
@@ -332,7 +332,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="price" Type="decimal" Precision="12" Scale="4" />
           <Property Name="from_date" Type="datetime" />
@@ -345,7 +345,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="customer_group_id" Type="int" />
           <Property Name="quantity" Type="int" />
@@ -355,7 +355,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="des" Type="nvarchar" MaxLength="505" />
           <Property Name="fromdate" Type="int" />
@@ -369,7 +369,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="rule_id" Type="int" />
           <Property Name="products_id" Type="int" />
           <Property Name="field_name" Type="nvarchar" MaxLength="50" />
@@ -380,7 +380,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="rule_id" Type="int" />
           <Property Name="customer_group_id" Type="int" />
         </EntityType>
@@ -388,7 +388,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="products_id_related" Type="int" />
         </EntityType>
@@ -396,7 +396,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product_id" Type="int" />
           <Property Name="customer_id" Type="int" />
           <Property Name="author" Type="nvarchar" MaxLength="50" />
@@ -409,7 +409,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="rule_id" Type="int" />
           <Property Name="customer_group_id" Type="int" />
         </EntityType>
@@ -417,7 +417,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="products_id" Type="int" />
           <Property Name="products_id_upsell" Type="int" />
         </EntityType>
@@ -715,7 +715,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="first_name" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="middle_name" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="last_name" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -730,7 +730,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="customer_id" />
           <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="street_address" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -784,7 +784,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product_id" />
           <Property Type="Int32" Name="atributes_id" />
           <Property Type="DateTime" Name="value" Precision="3" />
@@ -793,7 +793,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product_id" />
           <Property Type="Int32" Name="atributes_id" />
           <Property Type="Decimal" Name="value" Precision="12" Scale="4" />
@@ -802,7 +802,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product_id" />
           <Property Type="Int32" Name="atributes_id" />
           <Property Type="Int32" Name="value" />
@@ -811,7 +811,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product_id" />
           <Property Type="Int32" Name="atributes_id" />
           <Property Type="String" Name="value" MaxLength="505" FixedLength="false" Unicode="true" />
@@ -820,7 +820,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="category_id" />
         </EntityType>
@@ -828,7 +828,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="products_id_crosssell" />
         </EntityType>
@@ -836,7 +836,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="String" Name="type" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Byte" Name="is_require" />
@@ -851,7 +851,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="option_id" />
           <Property Type="Byte" Name="store_id" />
           <Property Type="Decimal" Name="price" Precision="12" Scale="4" />
@@ -861,7 +861,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="option_id" />
           <Property Type="Byte" Name="store_id" />
           <Property Type="String" Name="title" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -870,7 +870,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="SKU" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="UPC" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="EAN" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -904,7 +904,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="producst_id" />
           <Property Type="Byte" Name="back_orders" />
           <Property Type="Byte" Name="manage_stock" />
@@ -918,7 +918,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="customer_group_id" />
           <Property Type="Int32" Name="min_qty_cart" />
@@ -927,7 +927,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Decimal" Name="price" Precision="12" Scale="4" />
           <Property Type="Int32" Name="group_price_id" />
@@ -940,7 +940,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="customer_group_id" Nullable="false" />
           <Property Type="Decimal" Name="price" Precision="12" Scale="4" />
@@ -950,7 +950,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Decimal" Name="price" Precision="12" Scale="4" />
           <Property Type="DateTime" Name="from_date" Precision="3" />
@@ -963,7 +963,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="customer_group_id" />
           <Property Type="Int32" Name="quantity" />
@@ -973,7 +973,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="des" MaxLength="505" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="fromdate" />
@@ -987,7 +987,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="rule_id" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="String" Name="field_name" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -998,7 +998,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="rule_id" />
           <Property Type="Int32" Name="customer_group_id" />
         </EntityType>
@@ -1006,7 +1006,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="products_id_related" />
         </EntityType>
@@ -1014,7 +1014,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product_id" />
           <Property Type="Int32" Name="customer_id" />
           <Property Type="String" Name="author" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1027,7 +1027,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="rule_id" />
           <Property Type="Int32" Name="customer_group_id" />
         </EntityType>
@@ -1035,7 +1035,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="products_id" />
           <Property Type="Int32" Name="products_id_upsell" />
         </EntityType>

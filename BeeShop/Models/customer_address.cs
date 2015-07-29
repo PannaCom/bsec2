@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class customer_address
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> customer_id { get; set; }
         public string company { get; set; }
         public string street_address { get; set; }

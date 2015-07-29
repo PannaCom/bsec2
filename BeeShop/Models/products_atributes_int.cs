@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_atributes_int
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> product_id { get; set; }
         public Nullable<int> atributes_id { get; set; }
         public Nullable<int> value { get; set; }

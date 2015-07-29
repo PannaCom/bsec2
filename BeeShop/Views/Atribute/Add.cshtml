@@ -85,6 +85,7 @@
     </div>
     <!-- /#wrapper -->
 <script>
+    
     function AddNew() {
         var formdata = new FormData(); //FormData object
         var name = document.getElementById("name").value;
@@ -92,7 +93,9 @@
         var type = document.getElementById("type").value;
         var default_value = document.getElementById("default_value").value;
         var required = document.getElementById("required").value;
-        var apply_to = document.getElementById("apply_to").value;
+        var apply_to = getAllSelected("apply_to");
+        //alert(apply_to);
+        //return;
         var comparable = document.getElementById("comparable").value;
         var validate = document.getElementById("validate").value;
         var parent = @ViewBag.parent;

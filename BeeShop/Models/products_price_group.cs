@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_price_group
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> products_id { get; set; }
         public int customer_group_id { get; set; }
         public Nullable<decimal> price { get; set; }

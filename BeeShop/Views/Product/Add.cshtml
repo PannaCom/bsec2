@@ -16,52 +16,76 @@
                     <!-- /.col-lg-12 -->
                     <!-- /.row -->
                     <div class="row">
-                        <!-- /.row -->
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    @BeeShop.Lang.product_add_header_notice
+                                    <button type="button" class="btn btn-primary" onclick="SaveTab();">Save an Continue</button>
+                                    <button type="button" class="btn btn-primary" onclick="AddNew();">Save All</button>
+                                </div>
+                                <div class="panel-body">
                                     <div class="row">
-                                        <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            @BeeShop.Lang.product_add_header_notice
-                                            <button type="button" class="btn btn-primary" onclick="AddNew();">Save</button>
-                                        </div>
-                                        <!-- /.panel-heading -->
-                                        <div class="panel-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs">
-                                                <li class="active"><a href="#home" data-toggle="tab">Home</a>
-                                                </li>
-                                                <li><a href="#profile" data-toggle="tab">Profile</a>
-                                                </li>
-                                                <li><a href="#messages" data-toggle="tab">Messages</a>
-                                                </li>
-                                                <li><a href="#settings" data-toggle="tab">Settings</a>
-                                                </li>
-                                            </ul>
+                                        <div class="col-lg-12">
+                                            <form role="form">
+                                            <!-- /.panel-heading -->
+                                            <div class="panel-body">
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#general" data-toggle="tab">@BeeShop.Lang.product_tab1</a>
+                                                    </li>
+                                                    <li><a href="#profile" data-toggle="tab">@BeeShop.Lang.product_tab2</a>
+                                                    </li>
+                                                    <li><a href="#messages" data-toggle="tab">@BeeShop.Lang.product_tab3</a>
+                                                    </li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab4</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab5</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab6</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab7</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab8</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab9</a></li>
+                                                    <li><a href="#settings" data-toggle="tab">@BeeShop.Lang.product_tab10</a></li>
+                                                </ul>
 
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-                                                <div class="tab-pane fade in active" id="home">
-                                                    <h4>Home Tab</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                </div>
-                                                <div class="tab-pane fade" id="profile">
-                                                    <h4>Profile Tab</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                </div>
-                                                <div class="tab-pane fade" id="messages">
-                                                    <h4>Messages Tab</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                </div>
-                                                <div class="tab-pane fade" id="settings">
-                                                    <h4>Settings Tab</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade in active" id="general">
+                                                        <form role="form">
+                                                            <div class="form-group">
+                                                                <label>@BeeShop.Lang.product_field_name</label>
+                                                                <input class="form-control"  id="name">
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label>@BeeShop.Lang.product_field_atribute_group</label>
+                                                                <select id="atributes_group_id" name="atributes_group_id" class="form-control">
+                                                                </select>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label>@BeeShop.Lang.product_field_type</label>
+                                                                @Html.Partial("~/Views/_vProductType.cshtml")
+                                                            </div>                                                            
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="profile">
+                                                        <h4>Profile Tab</h4>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="messages">
+                                                        <h4>Messages Tab</h4>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="settings">
+                                                        <h4>Settings Tab</h4>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <!-- /.panel-body -->                          
+                                            </form>
                                         </div>
-                                        <!-- /.panel-body -->
                                     </div>
-                                    <!-- /.panel -->
-                                    </div>
-                                    <!-- /.row -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -76,15 +100,13 @@
     function AddNew() {
         var formdata = new FormData(); //FormData object
         var name = document.getElementById("name").value;
-        var description = document.getElementById("description").value;
-        var parent = @ViewBag.parent;
+       
         if (name==""){
             alert("@BeeShop.Lang.alert_input_name_field");
             return;
         }
         formdata.append("name", name);
-        formdata.append("description", description);
-        formdata.append("parent", parent);
+        
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/Atribute/Add_New');
         xhr.send(formdata);
@@ -103,4 +125,31 @@
             }*@
         }
     }
+    function getRootAtributeList() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Atribute/getRootAtributeList');
+        xhr.send();
+        var content = "";
+        showLoading();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var news = '{"news":' + xhr.responseText + '}';
+                var json_parsed = $.parseJSON(news);            
+                $("#atributes_group_id").html("");
+                for (var i = 0; i < json_parsed.news.length; i++) {
+                    if (json_parsed.news[i]) {
+                        var name = json_parsed.news[i].name;
+                        var id = json_parsed.news[i].id;  
+                        var order_no = json_parsed.news[i].order_no;
+                        $("#atributes_group_id").append("<option value=\""+id+"\">"+name+"</option>");
+                                              
+                    }
+                }
+                //$("#categorylist").val(value);
+                //alert(news);
+                hideLoading();
+            }
+        }
+    }
+    getRootAtributeList();
 </script>

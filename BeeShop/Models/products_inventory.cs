@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_inventory
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> producst_id { get; set; }
         public Nullable<byte> back_orders { get; set; }
         public Nullable<byte> manage_stock { get; set; }

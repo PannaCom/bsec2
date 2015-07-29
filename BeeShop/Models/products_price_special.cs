@@ -14,7 +14,7 @@ namespace BeeShop.Models
     
     public partial class products_price_special
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public Nullable<int> products_id { get; set; }
         public Nullable<decimal> price { get; set; }
         public Nullable<System.DateTime> from_date { get; set; }

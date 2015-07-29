@@ -1179,6 +1179,7 @@
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\core.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1246,6 +1247,7 @@
     <Content Include="Views\Product\Add.cshtml" />
     <Content Include="Views\_vTypeInput.cshtml" />
     <Content Include="Views\_vProductTypeApply.cshtml" />
+    <Content Include="Views\_vProductType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
